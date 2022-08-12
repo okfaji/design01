@@ -6,7 +6,7 @@ header  {
 }
 header h1 {
     float: left;
-    margin: 25px 0 0 0;
+    margin: 23px 0 0 0;
 }
 header nav {
     float: right;
@@ -19,7 +19,7 @@ header nav ul li {
 }
 header nav ul li a {
     display: block;
-    padding: 20px 35px;
+    padding: 20px 36px;
     color: #1D1D1D;
     font-size: 22px;
     font-weight: 700;
@@ -41,13 +41,12 @@ header nav ul li a {
     font-weight: 700;
 }
 .visual h2 {
-    margin: 0 0 5px 0;
+    margin: 0 0 23px 0;
     font-size: 50px;
     font-weight: 700;
 }
 .category h2 {
-    margin: 55px 0 24px 0;
-    line-height: 1.1; /* strong과 h2 사이의 행간 때문에 발생한 여백 삭제 */
+    margin: 50px 0 11px 0;
     font-size: 30px;
     font-weight: 700;
 }
@@ -65,12 +64,12 @@ header nav ul li a {
 }
 .category ul li a strong {
     display: block;
-    margin: 10px 0 0 0;
+    margin: 8px 0 0 0;
     font-weight: 400;
 }
 .network {
     height: 362px;
-    margin: 50px 0 0 0;
+    margin: 56px 0 0 0;
     background-image: url(../images/network_bg.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -78,18 +77,17 @@ header nav ul li a {
     color: #FFFFFF;
 }
 .network h2 {
-    padding: 70px 0 0 0;
-    line-height: 1.25;
+    padding: 66px 0 0 0;
     font-size: 30px;
     font-weight: 700;
 }
 .network p {
-    margin: 15px 0 30px 0;
+    margin: 9px 0 26px 0;
 }
 .network a {
     display: block;
     float: left; /* a사이의 여백 없이 나란히 배치 */
-    padding: 4px 22px;
+    padding: 2px 22px;
     margin: 0 5px 0 0;
     border: 1px solid #FFFFFF;
 }
@@ -102,7 +100,7 @@ footer .fhead {
     border-bottom: 1px solid #CCCCCC;
 }
 footer .fhead ul {
-    margin: 10px 0 0 0;
+    padding: 5px 0 0 0;
 }
 footer .fhead ul li {
     float: left;

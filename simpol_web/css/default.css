@@ -32,7 +32,6 @@ html, body {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
     font-weight: 400;
-    letter-spacing: -0.05em;
     word-break: keep-all;
 }
 /* 콘텐츠의 넓이를 제한하고 홈페이지를 브라우저 가운데 배치 */
