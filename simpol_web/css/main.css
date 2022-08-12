@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+KR);
+/* main.css에 default.css 삽입 - 호출 */
+@import url(default.css);
+header  {
+    height: 100px;
+}
+header h1 {
+    float: left;
+    margin: 25px 0 0 0;
+}
+header nav {
+    float: right;
+}
+header nav ul {
+    margin: 15px 0 0 0;
+}
+header nav ul li {
+    float: left;
+}
+header nav ul li a {
+    display: block;
+    padding: 20px 35px;
+    color: #1D1D1D;
+    font-size: 22px;
+    font-weight: 700;
+}
+.visual {
+    padding: 0 40px;
+    color: #FFFFFF;
+    height: 600px;
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.visual strong {
+    display: block;  /* strong 인라인 태그에 margin/padding을 주기 위한 값 */
+    padding: 225px 0 0 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.visual h2 {
+    margin: 0 0 5px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.category h2 {
+    margin: 55px 0 24px 0;
+    line-height: 1.1; /* strong과 h2 사이의 행간 때문에 발생한 여백 삭제 */
+    font-size: 30px;
+    font-weight: 700;
+}
+.category ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+/* li중에서 마지막 li를 선택  */
+.category ul li:last-child {
+    margin-right: 0;
+}
+.category ul li a {
+    display: block;
+}
+.category ul li a strong {
+    display: block;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+}
+.network {
+    height: 362px;
+    margin: 50px 0 0 0;
+    background-image: url(../images/network_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+.network h2 {
+    padding: 70px 0 0 0;
+    line-height: 1.25;
+    font-size: 30px;
+    font-weight: 700;
+}
+.network p {
+    margin: 15px 0 30px 0;
+}
+.network a {
+    display: block;
+    float: left; /* a사이의 여백 없이 나란히 배치 */
+    padding: 4px 22px;
+    margin: 0 5px 0 0;
+    border: 1px solid #FFFFFF;
+}
+
+footer {
+    color: #666666;
+}
+footer .fhead {
+    height: 60px;
+    border-bottom: 1px solid #CCCCCC;
+}
+footer .fhead ul {
+    margin: 10px 0 0 0;
+}
+footer .fhead ul li {
+    float: left;
+}
+footer .fhead ul li a {
+    display: block;
+    position: relative; /* after에 준 absolute의 정렬의 기준 */
+    padding: 14px;
+}
+footer .fhead ul li a::after {
+    display: block;
+    /* after를 감싸는 요소 a에 position 속성이 있기 때문에 
+       a를 기준으로 right 오른쪽 top 상단으로 정렬 */
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 1px;
+    height: 11px;
+    background-color: #dcdcdc;
+    content: "";
+}
+footer .fhead ul li:first-child a {
+    padding-left: 0;
+}
+footer .fhead ul li:last-child a::after {
+    display: none; /* 숨김 */
+}
+footer .fbody .info {
+    padding: 25px 0 20px 0;
+}
+footer .fbody .info address, footer .fbody .info span { 
+    display: inline-block; 
+    margin-right: 20px;
+}
+footer .fbody .copyright {
+    margin: 0 0 50px 0;
+}
