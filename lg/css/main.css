@@ -1,5 +1,100 @@
 @import url('default.css');
 
+header {
+    /* body를 기준으로 정렬 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    /* z-index 숫자가 높은 요소가 위에 배치
+      하단에 다른 요소가 z-index를 갖을 수 있기
+      때문에 header를 무조건 상단에 두기 위해
+      안전하게 100
+      즉, content영역에 요소는 z-index를 줘도
+      100미만의 값을 줘야함 */
+    width: 100%;
+    /* absolute를 주면 해당 요소는 
+       inline태그처럼 작동된다. 
+       width가 내부 요소가 존재하는 만큼 들어감 
+    */
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+header h1 {
+    float: left;
+    margin: 26px 253px 0 0;
+    font-size: 0;
+    line-height: 0;
+    /* 로고가 글자없이 이미지만 존재함
+       그래도 글자크기와 행간때문에 여백이 발행함
+       이 여백을 없애고 img가 존재하는 만큼만 적용 */
+}
+header h1 a {
+    display: block;
+}
+header .gnb {
+    float: left;
+    margin: 14px 0 0 0;
+}
+header .gnb button {
+    display: none; /* 모바일 메뉴 열기 버튼 */
+}
+header .gnb ul li {
+    float: left;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 20px 37px;
+    color: #FFF;
+    font-size: 20px;
+}
+header .tnb {
+    float: right;
+    margin: 37px 0 0 0;
+}
+header .tnb button {
+    margin: 0 0 0 20px;
+}
+header .tnb button i {
+    color: #FFF;
+    font-size: 31px;
+    font-weight: 300;
+}
+header .tnb button span {
+    display: none;
+}
+@media screen and (max-width:640px){
+    header {
+        height: 45px;
+    }
+    header h1 {
+        margin: 15px 0 0 0;
+    }
+    header h1 a img {
+        width: 43px; /* 모바일에서는 로고사이즈가 변경됨 */
+    }
+    header .gnb {
+        float: right;
+        margin: 15px 0 0 0;
+    }
+    header .gnb button {
+        display: block; /* 모바일 메뉴 열기 버튼 */
+    }
+    header .gnb button i {
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    header .gnb button span {
+        display: none;
+    }
+    header .gnb ul {
+        display: none; /* 모바일에서는 메뉴가 안나옴 */
+    }
+    header .tnb {
+        display: none;
+    }
+} /* media 종료 */
 
 .visual {
     position: relative; /* before의 기준점 */
@@ -19,3 +114,163 @@
     background-color: rgba(0,0,0,0.1);
     content: "";
 }
+.visual .inner {
+    /* before 검은색보다 글자를 위에 배치하기 위해서 */
+    position: relative;
+    z-index: 1;
+}
+.visual h2 {
+    padding: 500px 0 23px 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.visual h2 span {
+    display: block; /* pc에서만 줄바꿈 */
+}
+@media screen and (max-width:640px){
+    .visual {
+        height: auto;
+    }
+    .visual::before {
+        background-color: rgba(0,0,0,0.4);
+    }
+    .visual h2 {
+        padding: 205px 0 135px 0;
+        font-size: 25px;
+        text-align: center;
+    }
+    .visual h2 span {
+        display: inline; /* pc에서만 줄바꿈 */
+    }
+    .visual p {
+        display: none; /* 모바일에서 안보임 */
+    }
+}/* media 종료 */
+.biz .rowgroup1 {
+    margin: 109px 0 69px 0;
+}
+.biz .rowgroup2 {
+    margin: 0 0 69px 0;
+}
+.biz .fleft img {
+    float: left;
+}
+.biz .fleft .inner {
+    float: right;
+    margin: 0 40px 0 0;
+}
+.biz .fright img {
+    float: right;
+}
+.biz .fright .inner {
+    float: left;
+    margin: 0 0 0 40px;
+}
+.biz .inner {
+    width: 510px;
+}
+.biz h2 {
+    margin: 32px 0 8px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.biz strong {
+    display: block;
+    margin: 0 0 14px 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+.biz .link {
+    margin: 36px 0 0 0;
+}
+.biz .link ul li {
+    float: left;
+    width: 150px;
+    margin: 0 10px 10px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.biz .link ul li a {
+    display: block;
+    line-height: 39px;
+    white-space: nowrap;
+    text-align: center;
+}
+@media screen and (max-width:640px){
+    .biz .rowgroup1 {
+        margin: 59px 0 32px 0;
+    }
+    .biz .rowgroup2 {
+        margin: 0 0 32px 0;
+    }
+    .biz .fleft img {
+        float: none;
+    }
+    .biz .fleft .inner {
+        float: none;
+        margin: 0;
+    }
+    .biz .fright img {
+        float: none;
+    }
+    .biz .fright .inner {
+        float: none;
+        margin: 0;
+    }
+    .biz .inner {
+        width: auto;
+    }
+    .biz img {
+        width: 100%; /* img태그는 넓이나 높이 하나만 주면 비율에 맞게 줄어듬 */
+    }
+    .biz h2 {
+        margin: 17px 0 8px 0;
+        font-size: 25px;
+    }
+    .biz strong {
+        margin: 0 0 9px 0;
+        font-size: 15px;
+    }
+    .biz .link {
+        margin: 24px 0 0 0;
+    }
+    .biz .link ul li {
+        width: auto;
+        margin: 0 5px 0 0;
+    }
+    .biz .link ul li a {
+        padding: 0 20px;
+        line-height: 34px;
+        text-align: center;
+    }
+
+    /* 
+        link의 ul li를 좌우로 배치하고 슬라이드 되도록 하기 위함 
+        1. ul은 모든 li의 넓이의 합을 넓이로 가지고 있어야함
+        2. ul은 position: absolute 이어야함 
+        3. ul을 감싸고 있는 요소는 좌우스크롤을 허용해야함
+        3. ul을 감싸고 있는 요소는 높이를 줘야함 (내부 콘텐츠 만큼의)
+    */
+    .biz .link {
+        position: relative;
+        left: -10px;
+        overflow: auto;
+        width: calc(100% + 30px); /* %단위와 px단위를 동시에 계산해야 할때 사용 */
+        height: 54px;
+    }
+    .biz .link ul {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .biz .rowgroup1 .link ul {
+        width: 557px;
+    }
+    .biz .rowgroup2 .link ul {
+        width: 370px;
+    }
+    .biz .rowgroup3 .link ul {
+        width: 420px;
+    }
+
+}/* media 종료 */
