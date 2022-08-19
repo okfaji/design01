@@ -63,6 +63,17 @@ header .tnb button i {
 header .tnb button span {
     display: none;
 }
+
+header.fixed { /* header가 고정됐을때 jquery가 class를 추가 */
+    position: fixed;
+    background-color: #FFF;
+}
+header.fixed .gnb ul li a {
+    color: #1d1d1d;
+}
+header.fixed .tnb button i {
+    color: #1d1d1d;
+}
 @media screen and (max-width:640px){
     header {
         height: 45px;
@@ -93,6 +104,9 @@ header .tnb button span {
     }
     header .tnb {
         display: none;
+    }
+    header.fixed .gnb button i {
+        color: #1d1d1d;
     }
 } /* media 종료 */
 
@@ -273,4 +287,83 @@ header .tnb button span {
         width: 420px;
     }
 
+}/* media 종료 */
+
+.purpose {
+    position: relative;
+    height: 357px;
+    margin: 140px 0 0 0;
+    background: url(../images/purp_bg.png) no-repeat center center / cover;
+    color: #FFF;
+    text-align: center;
+}
+.purpose::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    content: "";
+}
+.purpose .inner {
+    position: relative;
+    z-index: 1;
+}
+.purpose h2 {
+    padding: 93px 0 43px 0;
+    font-size: 35px;
+    line-height: 1.28;
+}
+.purpose h2 strong {
+    position: relative;
+}
+.purpose h2 strong::before {
+    left: -83px;
+    top: -20px;
+    background: url(../images/prop_quot_left.png) no-repeat center center;
+    content: "";
+}
+.purpose h2 strong::after {
+    right: -70px;
+    bottom: -10px;
+    background: url(../images/prop_quot_right.png) no-repeat center center;
+    content: "";
+}
+.purpose h2 strong::before, .purpose h2 strong::after {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: rgba(255,255,255,0.5);
+    font-size: 130px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+@media screen and (max-width:640px){
+    .purpose {
+        height: auto;
+        padding: 0 0 40px 0;
+        margin: 59px 0 0 0;
+    }
+    .purpose::before {
+        background-color: rgba(0,0,0,0.3);
+    }
+    .purpose h2 {
+        padding: 78px 0 74px 0;
+        font-size: 25px;
+    }
+    .purpose h2 strong::before {
+        left: -29px;
+        top: -51px;
+        background-size: 35px auto; /* 넓이를 35px 높이는 비율에 맞게 알아서 */
+    }
+    .purpose h2 strong::after {
+        right: 59%;
+        bottom: -49px;
+        background-size: 35px auto;
+    }
+    .purpose h2 span {
+        display: block; /*줄바꿈*/
+    }
 }/* media 종료 */
