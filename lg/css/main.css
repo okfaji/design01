@@ -447,7 +447,7 @@ header.fixed .tnb button i {
 }
 
 footer {
-    padding: 25px 0 73px 0;
+    padding: 40px 0 73px 0;
     background-color: #0A0A0A;
     color: rgba(255,255,255,0.8);
 }
@@ -470,6 +470,9 @@ footer .family button i {
 }
 footer .inner {
     float: left;
+}
+footer .fnav {
+    margin: 4px 0 0 0;
 }
 footer .fnav li {
     position: relative;
@@ -504,3 +507,30 @@ footer .finfo {
 footer .copyright {
     color: rgba(255,255,255,0.6);
 }
+
+@media screen and (max-width:640px){
+    footer {
+        padding: 30px 0 57px 0;
+    }
+    footer .family {
+        float: none;
+    }
+    footer .family button {
+        width: 158px;
+        height: 31px;
+        padding: 0 4px 0 9px;
+    }
+    footer .inner {
+        float: none;
+    }
+    footer .fnav {
+        margin: 28px 0 0 0;
+    }
+    footer .fnav li::after {
+        top: 5px;
+        height: 13px;
+    }
+    footer .finfo {
+        margin: 23px 0 2px 0;
+    }
+}/* media 종료 */
