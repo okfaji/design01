@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'EY';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/Eulyoo1945-Regular.eot?#iefix) format('embedded-opentype'),
+	     url(../fonts/Eulyoo1945-Regular.woff2) format('woff2'),
+	     url(../fonts/Eulyoo1945-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'EY';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../fonts/Eulyoo1945-SemiBold.eot?#iefix) format('embedded-opentype'),
+	     url(../fonts/Eulyoo1945-SemiBold.woff2) format('woff2'),
+	     url(../fonts/Eulyoo1945-SemiBold.woff) format('woff');
+}
