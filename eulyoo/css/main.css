@@ -1,2 +1,79 @@
 @import url('default.css');
 
+header {
+    position: absolute; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* position:absolute를 주면 요소가 inline-block이 된 것처럼
+       내부에 콘텐츠가 존재하는 만큼의 넓이만 갖는다. */
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #FFF;
+}
+header h1 {
+    float: left;
+    margin: 32px 255px 0 0;
+}
+header h1 a {
+    display: block;
+    width: 198px;
+    height: 39px;
+    background: url(../images/logo_w.svg) no-repeat center center / 100%;
+    /* 로고를 영역에 꽉차게 하기 위해서 size를 넓이 100% 
+       (높이는 비율이 맞게 알아서 - 높이를 안써주면 알아서 들어감 ) 
+       cover는 배경을 영역에 빈틈없이 매꾸는 것이기때문에 로고가 짤림
+    */
+    font-size: 0;
+    line-height: 0;
+    /* 접근성때문에 로고의 대체텍스트로 쓸 글자 숨기기 */
+}
+header .gnb {
+    float: left;
+}
+header .tnb {
+    float: right;
+}
+
+.visial {
+    height: 870px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #FFF;
+    text-align: center;
+}
+.visial h2 {
+    padding: 366px 0 9px 0;
+    font-size: 50px;
+    font-weight: 400;
+}
+.visial p {
+    font-size: 17px;
+}
+.visial .txt_mobile { 
+    display: none; /* 모바일에서만 보일 글자 */
+}
+
+@media screen and (max-width:640px){
+    .visial {
+        height: auto;
+        padding: 0 0 79px 0;
+    }
+    .visial h2 {
+        padding: 115px 0 9px 0;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .visial h2 span {
+        display: block;
+    }
+    .visial p {
+        font-size: 13px;
+    }
+    .visial .txt_pc {
+        display: none; /* pc에서만 보일 글자 */
+    }
+    .visial .txt_mobile { 
+        display: block; /* 모바일에서만 보일 글자 */
+    }
+}/* media 종료 */
