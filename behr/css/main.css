@@ -4,10 +4,22 @@ header {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 100;
     width: 100%;
     height: 100px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     color: #fff;
+}
+header::after {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 312px;
+    background-color: #fff;
+    border-bottom: 1px solid #DDDDDD;
+    content: "";
 }
 header h1 {
     float: left;
@@ -24,6 +36,8 @@ header h1 a {
     line-height: 0;
 }
 header nav {
+    position: relative;
+    z-index: 110;
     float: right;
     margin: 17px 0 0 0;
 }
@@ -61,9 +75,63 @@ header nav > ul > li > a { /* 1차메뉴 */
     padding: 20px 0;
     font-size: 21px;
 }
+header nav > ul > li:hover > a {
+    font-weight: 700;
+}
+header nav > ul > li > a > span {
+    position: relative;
+}
+header nav > ul > li:hover > a span::before {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #1D1D1D;
+    content: "";
+}
 header nav > ul > li > ul { /* 2차메뉴 */
     display: none;
+    padding: 30px 0 0 0;
+    /*
+        1차메뉴와 2차메뉴 사이에는 여백(margin)이 존재하면 안됨
+        padding은 내부 여백으로 태그 영역 자체가 늘어나는 것이라 여백 아님
+        ---> 여백이 존재하면 1차메뉴에서 2차메뉴로 이동할때(내려갈때) 
+             메뉴가 아웃되어 버림
+    */
 }
+header nav > ul > li > ul > li > a {
+    display: block;
+    color: #666;
+    font-size: 17px;
+    line-height: 40px;
+}
+header nav > ul > li > ul > li > a:hover {
+    color: #1D1D1D;
+    font-weight: 700;
+}
+
+/* header가 고정되거나(fixed), 메뉴에 마우스를 오버했을때(open) */
+header.fixed {
+    position: fixed;
+}
+header.fixed, 
+header.open {
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #FFF;
+    color: #1D1D1D;
+}
+header.fixed h1 a, header.open h1 a {
+    background-image: url(../images/logo.svg);
+}
+header.open::after {
+    display: block;
+}
+header.open nav > ul > li > ul { /* 2차메뉴 */
+    display: block;
+}
+
 @media screen and (max-width:640px){
     header {
         height: 45px;
@@ -339,7 +407,9 @@ header nav > ul > li > ul { /* 2차메뉴 */
         font-size: 14px;
     }
 }/* brand media 종료 */
-
+.service h2 {
+    display: none;
+}
 .service ul li {
     float: left;
     width: 33.33%;
@@ -398,6 +468,7 @@ aside {
     position: fixed;
     bottom: 50px;
     right: 20px;
+    z-index: 10;
     /* left: 50%;
     margin-left: 660px; */
 }
