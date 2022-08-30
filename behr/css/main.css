@@ -423,3 +423,120 @@ aside button span {
         display: none;
     }
 }
+footer {
+    padding: 0 0 100px 0;
+    background-color: #2D2D2D;
+    color: rgba(255,255,255,0.8);
+}
+footer .inner {
+    position: relative; /* flogo 정렬의 기준점 */
+}
+footer .sns {
+    height: 70px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+footer .sns ul {
+    float: right;
+    margin: 21px 0 0 0;
+}
+footer .sns ul li {
+    float: left;
+    margin: 0 5px 0 0;
+}
+footer .sns ul li:last-child {
+    margin-right: 0;
+}
+footer .sns ul li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.6);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 19px auto;
+    /* a안에 글자 안보이게 */
+    font-size: 0;
+    line-height: 0;
+}
+footer .sns ul li.facebook a {
+    background-image: url(../images/sns_facebook.svg);
+}
+footer .sns ul li.naver a {
+    background-image: url(../images/sns_naver.svg);
+}
+footer .sns ul li.insta a {
+    background-image: url(../images/sns_insta.svg);
+}
+footer .sns ul li.youtube a {
+    background-image: url(../images/sns_youtube.svg);
+}
+footer .flogo {
+    position: absolute;
+    left: 0;
+    top: 25px;
+}
+footer .flogo img {
+    width: 85px;
+    opacity: 0.8;
+}
+footer .finfo {
+    margin: 25px 0;
+}
+footer .finfo span {
+    display: inline-block;
+}
+footer .finfo span.brd {
+    position: relative;
+    margin-right: 33px;
+}
+footer .finfo span.brd::after {
+    position: absolute;
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255,255,255,0.2);
+    content: "";
+}
+
+@media screen and (max-width:640px){
+    footer {
+        padding: 0 0 60px 0;
+    }
+    footer .sns {
+        height: 50px;
+        text-align: center;
+    }
+    footer .sns ul {
+        display: inline-block;
+        float: none;
+        margin: 0;
+        padding: 12px 0 0 0;
+    }
+    footer .sns ul li {
+        margin: 0 10px 0 0;
+    }
+    footer .sns ul li a {
+        width: 25px;
+        height: 25px;
+        border-radius: 13px;
+        background-size: 16px auto;
+    }
+    footer .flogo {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 24px 0 0 0;
+    }
+    footer .finfo {
+        margin: 16px 0 27px 0;
+    }
+    footer .finfo span.brd {
+        margin-right: 15px;
+    }
+    footer .finfo span.brd::after {
+        right: -11px;
+        height: 9px;
+    }
+}/* footer media 종료 */
