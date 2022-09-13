@@ -1,0 +1,179 @@
+@import url('default.css');
+
+.visual {
+    height: 850px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #FFF;
+}
+.visual h2 {
+    padding: 298px 0 0 0;
+    font-size: 75px;
+    font-weight: 400;
+    line-height: 1;
+}
+.visual h2 strong {
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .visual {
+        height: auto;
+    }
+    .visual h2 {
+        padding: 107px 0 138px 0;
+        font-size: 35px;
+    }
+}/* visual 반응형 종료 */
+
+.works {
+    color: #FFF;
+    text-align: center;
+    background-color: #F39800;
+}
+.works .tit {
+    height: 245px;
+}
+.works .tit h2 {
+    padding: 54px 0 10px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.works .tit p span {
+    display: block;
+}
+.works ul li {
+    float: left;
+    width: 33.33%;
+    transition: width 0.5s;
+}
+.works ul li.on {
+    width: 50%;
+}
+.works ul li.off {
+    width: 25%;
+}
+.works ul li a {
+    display: block;
+    height: 300px;
+}
+.works ul li.marketing a {
+    background: url(../images/works_marketing.png) no-repeat center center / cover;
+}
+.works ul li.commerce a {
+    background: url(../images/works_commerce.png) no-repeat center center / cover;
+}
+.works ul li.biz a {
+    background: url(../images/works_biz.png) no-repeat center center / cover;
+}
+.works ul li a i {
+    margin: 82px 0 14px 0;
+    color: rgba(255,255,255,0.8);
+    font-size: 50px;
+}
+.works ul li a strong {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+@media screen and (max-width:640px){
+    .works .tit {
+        height: auto;
+    }
+    .works .tit h2 {
+        padding: 36px 0 13px 0;
+        font-size: 25px;
+    }
+    .works .tit p span {
+        display: inline;
+    }
+    .works ul {
+        padding: 25px 20px 20px 20px;
+    }
+    .works ul li {
+        float: none;
+        width: auto;
+    }
+    .works ul li a {
+        height: auto;
+    }
+    .works ul li a i {
+        margin: 29px 0 6px 0;
+        font-size: 30px;
+    }
+    .works ul li a strong {
+        padding: 0 0 37px 0;
+        font-size: 20px;
+    }
+}/* works 반응형 종료 */
+
+.news h2 {
+    margin: 51px 0 36px 0;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.news ul li {
+    float: left;
+    width: 400px;
+    margin: 0 40px 0 0;
+}
+.news ul li:last-child {
+    margin-right: 0;
+}
+.news ul li a {
+    display: block;
+}
+.news ul li a .subject {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    /* 2줄고정 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em;
+}
+.news ul li a .date {
+    display: block;
+    margin: 10px 0;
+    color: #666666;
+}
+.news ul li a .cnt {
+    display: block;
+    /* 7줄고정 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 10.5em;
+}
+@media screen and (max-width:640px){
+    .news h2 {
+        margin: 39px 0 29px 0;
+        font-size: 25px;
+    }
+    .news ul li {
+        float: none;
+        width: auto;
+        margin: 0 0 21px 0;
+        border-bottom: 1px solid #CCCCCC;
+    }
+    .news ul li:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+    .news ul li a .subject {
+        font-size: 17px;
+        /* 2줄고정 -> 줄수 제한 없음 */
+        overflow: visible;
+        height: auto;
+    }
+    .news ul li a .cnt {
+        margin: 0 0 21px 0;
+        /* 7줄고정 -> 4줄 고정 */
+        height: 6em;
+    }
+}/* news 반응형 종료 */
+
+.footer {
+    background: #3D3D3D;
+    color: rgba(255,255,255,0.8);
+}
