@@ -24,3 +24,151 @@
         font-size: 25px;
     }
 }/* visual 반응형 종료 */
+
+.about {
+    text-align: center;
+}
+.about h2 {
+    margin: 95px 0 23px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.about p span {
+    display: block;
+}
+.about ul {
+    margin: 90px 0 0 0;
+}
+.about ul li {
+    float: left;
+    width: 290px;
+    margin: 0 40px 0 0;
+}
+.about ul li:last-child {
+    margin-right: 0;
+}
+.about ul li .ico {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 0 0 19px 0;
+    border-radius: 75px;
+    background-color: #F4F4F4;
+}
+.about ul li .ico i {
+    margin: 35px 0 0 0;
+    color: #3d3d3d;
+    font-size: 80px;
+    font-weight: 300;
+}
+
+@media screen and (max-width:640px){
+    .about h2 {
+        margin: 53px 0 14px 0;
+        font-size: 30px;
+    }
+    .about p span {
+        display: inline;
+    }
+    .about ul {
+        margin: 39px 0 0 0;
+    }
+    .about ul li {
+        width: calc(50% - 8px);
+        margin: 0 16px 41px 0;
+    }
+    .about ul li:nth-child(2) {
+        margin-right: 0;
+    }
+    .about ul li .ico {
+        width: 90px;
+        height: 90px;
+        margin: 0 0 9px 0;
+        border-radius: 45px;
+    }
+    .about ul li .ico i {
+        margin: 22px 0 0 0;
+        font-size: 45px;
+    }
+}/* about 반응형 종료 */
+
+.service {
+    text-align: center;
+}
+.service h2 {
+    margin: 184px 0 46px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.service ul li {
+    float: left;
+    width: 33.33%;
+}
+.service ul li.display {
+    background: url(../imagese/service_display.png) no-repeat center center / cover;
+}
+.service ul li.web {
+    background: url(../imagese/service_web.png) no-repeat center center / cover;
+}
+.service ul li.mobile {
+    background: url(../imagese/service_mobile.png) no-repeat center center / cover;
+}
+.service ul li.sns {
+    background: url(../imagese/service_sns.png) no-repeat center center / cover;
+}
+.service ul li.promotion {
+    background: url(../imagese/service_promotion.png) no-repeat center center / cover;
+}
+.service ul li.video {
+    background: url(../imagese/service_video.png) no-repeat center center / cover;
+}
+.service ul li a {
+    display: block;
+    height: 250px;
+    color: #FFF;
+}
+.service ul li a strong {
+    display: block;
+    padding: 71px 0 9px 0;
+    font-size: 30px;
+}
+.service ul li a span {
+    display: block;
+}
+@media screen and (max-width:640px){
+    .service h2 {
+        margin: 34px 0 20px 0;
+        font-size: 30px;
+    }
+    .service ul li {
+        width: 50%;
+    }
+    .service ul li a {
+        height: auto;
+    }
+    .service ul li a strong {
+        padding: 27px 0 34px 0;
+        font-size: 20px;
+    }
+    .service ul li a span {
+        display: none;
+    }
+}/* service 반응형 종료 */
+
+.footer {
+    margin: 117px 0 0 0;
+    background-color: #202020;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+}
+.footer .copyright {
+    padding: 63px 0;
+}
+@media screen and (max-width:640px){
+    .footer {
+        margin: 70px 0 0 0;
+    }
+    .footer .copyright {
+        padding: 55px 0;
+    }
+}/* footer 반응형 종료 */
