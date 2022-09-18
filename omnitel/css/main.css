@@ -30,9 +30,6 @@
     text-align: center;
     background-color: #F39800;
 }
-.works .tit {
-    height: 245px;
-}
 .works .tit h2 {
     padding: 54px 0 10px 0;
     font-size: 50px;
@@ -41,16 +38,12 @@
 .works .tit p span {
     display: block;
 }
+.works ul {
+    margin: 67px 0 0 0;
+}
 .works ul li {
     float: left;
     width: 33.33%;
-    transition: width 0.5s;
-}
-.works ul li.on {
-    width: 50%;
-}
-.works ul li.off {
-    width: 25%;
 }
 .works ul li a {
     display: block;
@@ -77,8 +70,8 @@
     line-height: 1.2;
 }
 @media screen and (max-width:640px){
-    .works .tit {
-        height: auto;
+    .works {
+        padding: 0 20px 20px 20px;
     }
     .works .tit h2 {
         padding: 36px 0 13px 0;
@@ -88,7 +81,7 @@
         display: inline;
     }
     .works ul {
-        padding: 25px 20px 20px 20px;
+        margin: 25px 0 0 0;
     }
     .works ul li {
         float: none;
