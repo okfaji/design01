@@ -119,6 +119,9 @@ html, body {
     font-size: 20px;
     line-height: 95px;
 }
+.header .gnb > ul > li.now > a {
+    font-weight: 700;
+}
 .header .gnb > ul > li:hover > a {
     color: #ED1C24 !important;
     font-weight: 700;
@@ -160,7 +163,8 @@ html, body {
     display: block;
     line-height: 36px;
 }
-.header .gnb > ul > li > ul > li > a:hover {
+.header .gnb > ul > li > ul > li > a:hover, 
+.header .gnb > ul > li > ul > li.now > a {
     color: #ED1C24;
     font-weight: 700;
 }
