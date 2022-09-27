@@ -11,17 +11,16 @@
 <body>
     <div id="wrap">
         <section class="introduce clearfix">
-            <!-- 연구소소개와 기업 소개를 모두 포함하는 가상의 제목 (웹표준을 위해 입력) -->
-            <h2>KCC소개</h2>
+            <h2>KCC소개</h2><!-- 연구소소개와 기업 소개를 모두 포함하는 가상의 제목 (웹표준을 위해 입력) -->
             <div class="life">
-                <a href="#n">
+                <a href="#n"> <!-- 이게 빨간색 -->
                     <h3>생활속엔<br />
                     언제나 <strong>KCC</strong>가 있습니다</h3>
                     <p>KCC의 기술력! 친환경적이고 세련된 실내 공간을 만들다.</p>
                 </a>
             </div>
             <div class="research">
-                <a href="#n">
+                <a href="#n"> <!-- 이게 파란색 -->
                     <h3>고급 인력과<br />
                     과감한 <strong>연구</strong>시설 투자</h3>
                     <p>쾌적하고 풍요로운 공간 창조를 위한 미래기술 실현</p>
@@ -30,17 +29,18 @@
         </section>
         <section class="with">
             <div class="wrapper">
-                <div class="tit">
-                    <h2><span>사회공헌</span></h2>
-                    <p class="sub_tit">The Better World with KCC</p>
-                    <p><span>캐치프레이즈는 사회공헌 미션인 고객 및 지역사회와 함께 행복한 세상을 만들어가는 동반자가 되는 KCC라는 의미를 담고 있습니다.</span>
+                <div class="tit"> <!-- 상단 글씨를 tit로 묶어준 이유는 recruit와 패턴을 맞추기 위함임. recruit에 와 tit로 꼭 묶어야 하는지 설명있음 -->
+                    <h2><span>사회공헌</span></h2> <!-- 이 영역의 제목은 사회공헌 그래서 h2를 줌. 그리고 사회공헌 글자 길이만큼 선을 긋기 위해서 span태그로 감쌈 -->
+                    <p class="sub_tit">The Better World with KCC</p> <!-- 이 글자는 크기는 해도 제목은 아니기 때문에 p태그로 주고 sub_tit이라고 클래스를 줌 -->
+                    <!-- 일부 글씨가 모바일에 사라지기 때문에 span태그로 감싸고, 이 감싼대로 pc에서는 줄바꿈을 주기 때문에 별도의 <br />태그를 안주고 span을 잡아서 display:block을 줄 예정 -->
+                    <p><span>캐치프레이즈는 사회공헌 미션인 고객 및 지역사회와 함께 행복한 세상을 만들어가는 동반자가 되는 KCC라는 의미를 담고 있습니다.</span> 
                         KCC 사회공헌 활동 지향점은 '함께[TOGETHER]' 입니다.</p>
                 </div>
                 <ul>
                     <li>
                         <a href="#">
                             <i class="material-symbols-rounded">water_drop</i>
-                            <strong>깨끗한 <span>세상</span></strong>
+                            <strong>깨끗한 <span>세상</span></strong> <!-- 모바일에서만 줄바꾸려고 span태그로 감쌈 -->
                         </a>
                     </li>
                     <li>
@@ -72,14 +72,17 @@
         </section>
         <section class="recruit">
             <div class="wrapper">
-                <div class="tit">
-                    <h2><span>인재채용</span></h2>
-                    <p class="sub_tit">KCC에서 KCC를 찾습니다</p>
+                <div class="tit"> <!-- 상단 글씨는 가운데 정렬이고 하단 박스는 왼쪽 정렬이라 글자가 가운데 정렬하는 텍스트만 tit로 묶어줌 -->
+                    <h2><span>인재채용</span></h2> <!-- 이 영역의 제목은 사회공헌 그래서 h2를 줌. 그리고 사회공헌 글자 길이만큼 선을 긋기 위해서 span태그로 감쌈 -->
+                    <p class="sub_tit">KCC에서 KCC를 찾습니다</p> <!-- 이 글자는 크기는 해도 제목은 아니기 때문에 p태그로 주고 sub_tit이라고 클래스를 줌 -->
                     <p>지식과 용기, 그리고 도전정신으로 무장한 당신이라면 KCC의 한사람이 될 수 있습니다.</p>
                 </div>
-                <div class="rc_wrap">
+                <div class="rc_wrap"> <!-- notice와 ul이 좌우로 배치되기 때문에 이를 flex로 주기 위해서 div로 묶어줌. 만약 float로 주더라도 clearfix를 주기위해 div로 묶어 주었을 것. -->
+                    <!-- 왼쪽에 들어가는 채용공고와 오른쪽 인재상/인사제도 등은 디자인도 좀 다르고 특히 모바일에서는 위아래로 들어가서 아예 분리함 
+                         채용공고는 notice로 주고 인재상/인사제도 등은 ul li로 줌.
+                    -->
                     <div class="notice">
-                        <a href="#n">
+                        <a href="#n"> <!-- 자세히보기만 a태그를 줘도 되고, 전체를 a태그로 감싸도 됨. HTML5에서는 a태그 안에 block태그가 들어가 된다는 것이 공식 답변 -->
                             <h3>채용공고</h3>
                             <p>KCC는 미래를 선도하는<br />
                                 글로벌 리더로 함께 성장해 나갈<br />
@@ -128,9 +131,9 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </section>
-    </div>
+                </div><!-- rc_wrap의 종료 -->
+            </div><!-- wrapper의 종료 -->
+        </section> <!-- recruit의 종료 -->
+    </div> <!-- id:wrap의 종료 -->
 </body>
 </html>
