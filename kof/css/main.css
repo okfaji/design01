@@ -115,3 +115,127 @@
         font-size: 13px;
     }
 }
+
+.part {
+    margin: 65px 0 0 0;
+}
+.part h2 {
+    position: relative;
+    margin: 0 0 26px 0;
+    color: #1D1D1D;
+    font-size: 45px;
+    font-weight: 700;
+}
+.part h2::before {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 35px;
+    height: 1px;
+    background-color: #1D1D1D;
+    content: "";
+}
+.part .list ul {
+    width: 2400px; 
+    /* 모든 li의 넓이 + 여백을 합한 넓이 
+        li의 넓이 440px + 오른쪽 여백 40px = 480px * li의 숫자 5 = 2400 */
+    margin-left: -480px; /* 하나의 li의 넓이 + 여백 */
+}
+.part .list ul li {
+    float: left;
+    width: 440px;
+    margin: 0 40px 0 0;
+}
+.part .list ul li a {
+    display: block;
+}
+.part .list ul li a .pic {
+    overflow: hidden; 
+    /* 마우스 오버시 이미지가 확대 되는데 영역 밖으로 이미지가 나가지 않도록 */
+    font-size: 0;
+    line-height: 0;
+    /* 이미지하단에 발생하는 여백 삭제 */
+}
+.part .list ul li a h3 {
+    margin: 18px 0 10px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+.part .list ul li a p {
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+}
+.part .list ul li a .pic img {
+    width: 100%;
+    transition: 0.5s;
+}
+/* 마우스 오버했을때 */
+.part .list ul li a:hover .pic img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+.part .more {
+    position: absolute;
+    right: 0;
+    top: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    height: 38px;
+    padding: 0 14px 0 14px;
+    border: 1px solid #666666;
+    border-radius: 19px;
+}
+.part .more i {
+    color: #666666;
+    font-size: 11px;
+}
+
+@media screen and (max-width:640px){ 
+    .part {
+        margin: 60px 0 0 0;
+    }
+    .part h2 {
+        margin: 0 0 23px 0;
+        font-size: 25px;
+    }
+    .part h2::before {
+        width: 21px;
+    }
+    .part .list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px; /* 가로 스크롤바가 글자에 겹쳐서  */
+    }
+    .part .list ul {
+        width: 1104px; 
+        /* 모든 li의 넓이 + 여백을 합한 넓이 
+            li의 넓이 208px + 오른쪽 여백 16px = 224px * li의 숫자 5 = 1120 */
+        margin-left: 0; /* 모바일은 첫번째 li부터 나타남 */
+    }
+    .part .list ul li {
+        width: 208px;
+        margin: 0 16px 0 0;
+    }
+    .part .list ul li:last-child {
+        margin-right: 0;
+    }
+    .part .list ul li a h3 {
+        margin: 16px 0 7px 0;
+        font-size: 20px;
+    }
+    
+    .part .more {
+        top: 2px;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 15px;
+    }
+    .part .more span {
+        display: none; /* 글자 숨기기 */
+    }
+}
