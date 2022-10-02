@@ -10,3 +10,9 @@
 - 대전광역시 동물보호센터 홈페이지 <a href="http://okfaji.github.io/design01/djan/" target="_blank">/djan</a>
 - 금호건설 홈페이지 <a href="http://okfaji.github.io/design01/kumho/" target="_blank">/kumho</a>
 - 한국해양재단 홈페이지 <a href="http://okfaji.github.io/design01/kof/" target="_blank">/kof</a>
+## 평가과제
+- 라인 홈페이지 <a href="http://okfaji.github.io/design01/line/" target="_blank">/line</a>
+- 네이버 홈페이지 <a href="http://okfaji.github.io/design01/naver/" target="_blank">/naver</a>
+- 옴니텔 반응형 홈페이지 <a href="http://okfaji.github.io/design01/omnitel/" target="_blank">/omnitel</a>
+- 디지털오션 반응형 홈페이지 <a href="http://okfaji.github.io/design01/ocean/" target="_blank">/ocean</a>
+- KCC 반응형 홈페이지 <a href="http://okfaji.github.io/design01/kcc/" target="_blank">/kcc</a>
