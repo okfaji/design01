@@ -33,5 +33,16 @@ $(document).ready(function(){
         $('.biz .list ul').removeClass('over');
         $(this).removeClass('active');
     });
+    
+     $(window).on('scroll', function () {
+        var pageYOffset = window.pageYOffset + screen.height / 2;
+        document.querySelectorAll('.event').forEach(function (elem) {
+            if (pageYOffset > elem.offsetTop) {
+                elem.classList.add('on');
+            } else {
+                elem.classList.remove('on');
+            }
+        });
+    });
 
 });//document.ready 종료
