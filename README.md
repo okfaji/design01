@@ -16,3 +16,4 @@
 - 옴니텔 반응형 홈페이지 <a href="http://okfaji.github.io/design01/omnitel/" target="_blank">/omnitel</a>
 - 디지털오션 반응형 홈페이지 <a href="http://okfaji.github.io/design01/ocean/" target="_blank">/ocean</a>
 - KCC 반응형 홈페이지 <a href="http://okfaji.github.io/design01/kcc/" target="_blank">/kcc</a>
+- 고려개발 반응형 홈페이지 <a href="http://okfaji.github.io/design01/kdc/" target="_blank">/kdc</a>
