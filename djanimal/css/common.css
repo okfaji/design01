@@ -210,8 +210,6 @@ header.fixed::before {
         white-space: nowrap;
         word-wrap: normal;
         direction: ltr;
-        -webkit-font-feature-settings: 'liga';
-        -webkit-font-smoothing: antialiased;
         content: "\e5cf";
     }
     .header .gnb > ul > li > ul { /* 2차메뉴 */

@@ -87,8 +87,6 @@
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
     content: "\e409";
 }
 .container .sub_tit h2 {
