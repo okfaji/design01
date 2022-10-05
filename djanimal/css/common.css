@@ -42,56 +42,32 @@ html, body {
 .clearfix::after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
+.cnt_wrap {
+    position: relative;
+}
+
 header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 300;
     width: 100%;
     height: 100px;
     color: #FFF;
     transition: 0.5s;
 }
 header .logo {
-    float: left;
-    margin: 32px 128px 0 0;
+    position: absolute;
+    left: 0;
+    top: 32px;
     font-size: 0;
     line-height: 0;
-    transition: 0.5s;
 }
-header .gnb {
-    float: left;
-}
-header .gnb > ul > li {
-    float: left;
-    width: 230px;
-    text-align: center;
-}
-header .gnb > ul > li > a {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 100px;
-    /* header의 높이가 100px - 글자를 header 위아래 가운데 배치 */
-    white-space: nowrap;
-    /* 행간으로 위아래 여백을 처리해버리는 경우
-       절대 2줄이 되지 못하도록 white-space:nowrap(줄바꿈금지)을 준다 */
-    transition: 0.5s;
-}
-header .gnb > ul > li > ul {
-    /* 2차메뉴 */
-    display: none;
-}
-header .gnb .gnb_open {
-    display: none; /* 모바일 버튼 */
-}
-header .gnb .gnb_close {
-    display: none; /* 모바일 버튼 */
-}
+
 header .tnb {
-    float: right;
-    margin: 35px 0 0 0;
-    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    top: 35px;
 }
 header .tnb a {
     display: block;
@@ -107,17 +83,16 @@ header .tnb a i {
 
 header.fixed {
     position: fixed;
-    height: 80px;
+}
+header.fixed::before { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100px;
     background-color: rgba(0,0,0,0.6);
-}
-header.fixed .logo {
-    margin-top: 20px;
-}
-header.fixed .gnb > ul > li > a {
-    line-height: 80px;
-}
-header.fixed .tnb {
-    margin: 25px 0 0 0;
+    content: "";
 }
 
 @media screen and (min-width:641px){ /* 641px이상 즉 pc일때만 적용 */
@@ -130,6 +105,7 @@ header.fixed .tnb {
     .header .gnb > ul {
         display: flex;
         justify-content: center;
+        margin-left: 60px;
     }
     .header .gnb > ul > li {
         position: relative;
@@ -141,6 +117,18 @@ header.fixed .tnb {
         font-size: 20px;
         font-weight: 700;
         line-height: 100px;
+    }
+    .header .gnb > ul > li.now > a > span {
+        position: relative;
+    }
+    .header .gnb > ul > li.now > a > span::before {
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 1px;
+        background-color: #00AE4D;
+        content: "";
     }
     .header .gnb > ul > li:hover > a {
         color: #00AE4D;
@@ -159,7 +147,7 @@ header.fixed .tnb {
         font-size: 17px;
         line-height: 35px;
     }
-    .header .gnb > ul > li > ul > li > a:hover {
+    .header .gnb > ul > li > ul > li.now > a, .header .gnb > ul > li > ul > li > a:hover {
         color: #00AE4D;
         font-weight: 700;
     }
@@ -169,6 +157,7 @@ header.fixed .tnb {
         position: absolute;
         left: 0;
         top: 0;
+        z-index: -1;
         width: 100%;
         height: 320px;
         background-color: rgba(0,0,0,0.6);
@@ -181,21 +170,23 @@ header.fixed .tnb {
 
 @media screen and (max-width:640px){
     header {
-        height: 45px;
+        height: 60px;
     }
     header .logo {
-        margin: 15px 0 0 0;
+        top: 16px;
     }
     header .logo a img {
-        width: 80px;
-    }
-    header .gnb {
-        float: right;
-        margin: 13px 0 0 0;
+        width: 124px;
     }
     .header .gnb > ul {
         display: none;
-        padding: 48px 0 0 0;
+        padding: 68px 0 0 0;
+    }
+    .header .gnb > ul > li {
+        border-bottom: 1px solid #ededed;
+    }
+    .header .gnb > ul > li:first-child {
+        border-top: 1px solid #ededed;
     }
     .header .gnb > ul > li > a {
         display: block;
@@ -206,7 +197,7 @@ header.fixed .tnb {
     .header .gnb > ul > li > a::after {
         position: absolute;
         right: 0;
-        top: 14px;
+        top: 18px;
         color: #666666;
         font-family: 'Material Symbols Rounded';
         font-weight: normal;
@@ -225,6 +216,16 @@ header.fixed .tnb {
     }
     .header .gnb > ul > li > ul { /* 2차메뉴 */
         display: none;
+        padding: 15px 0;
+        background-color: #F4F4F4;
+    }
+    .header .gnb > ul > li > ul > li > a {
+        display: block;
+        padding: 0 0 0 20px;
+        line-height: 35px;
+    }
+    .header .gnb > ul > li > ul > li.now > a {
+        font-weight: 700;
     }
     .header.menu_mobile {
         color: #1D1D1D;
@@ -250,35 +251,44 @@ header.fixed .tnb {
     .header.menu_mobile .gnb > ul {
         display: block;
     }
+    .header .gnb > ul > li.sub_open > ul {
+        display: block;
+    }
+    .header .gnb > ul > li.sub_open > a::after {
+        content: "\e5ce";
+    }
     header .gnb .gnb_open {
         display: block; /* 모바일 버튼 */
+        float: right;
+        margin: 13px 0 0 0;
     }
     header .gnb .gnb_open span {
         display: none;
     }
     header .gnb .gnb_open i {
-        font-size: 20px;
+        font-size: 35px;
+        font-weight: 300;
     }
     .header .gnb .gnb_close {
         display: none;
         position: absolute;
         right: 0;
-        top: 0;
+        top: 9px;
         height: 45px;
+    }
+    header .gnb .gnb_close span {
+        display: none;
     }
     .header .gnb .gnb_close i {
         margin: 3px 0 0 0;
-        font-size: 20px;
+        font-size: 35px;
         font-weight: 300;
     }
     header .tnb {
         display: none;
     }
-    header.fixed {
-        height: 45px;
-    }
-    header.fixed .logo {
-        margin-top: 15px;
+    header.fixed::before { 
+        height: 60px;
     }
 }/* header media 종료 */
 
@@ -294,6 +304,7 @@ footer .family {
     position: absolute;
     right: 0;
     top: 60px;
+    z-index: 100;
 }
 footer .family button {
     width: 200px;

@@ -83,4 +83,36 @@ $(document).ready(function(){
         /* 해당 요소를 클릭했을때 기본적으로 발생하는 이벤트를 취소 - href로 페이지가 이동하는걸 취소 시킴 */
     });
 
+    
+    /*
+        family site 
+        footer .family를 클릭하면 fa_open 클래스 추가/삭제
+    */
+    $('footer .family button').on('click', function(){
+        $('footer .family').toggleClass('fa_open')
+    })
+
+
+    /*
+        브라우저가 스크롤을 할때 스크롤값이 0보다 크면
+        header에 fixed라는 클래스를 줄 예정
+        스크롤값이 0이면 header에 fixed라는 클래스 삭제
+    */
+    let scrolling //스크롤된값
+    scrollChk() //함수의 호출
+
+    $(window).scroll(function(){
+        scrollChk() //함수의 호출
+    })
+
+    function scrollChk(){ //함수의 선언
+        scrolling = $(window).scrollTop()
+        console.log(scrolling)
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    }
+
 });//document.ready

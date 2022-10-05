@@ -5,7 +5,7 @@
 .visual {
     position: relative;
     height: 1000px;
-    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    background: url(../images/main/visual_bg.png) no-repeat center center / cover;
     background-attachment: fixed;
     color: #FFF;
 }
@@ -217,7 +217,7 @@
 .step {
     height: 706px;
     margin: 40px 0 0 0;
-    background: url(../images/step_bg.png) no-repeat center center / cover;
+    background: url(../images/main/step_bg.png) no-repeat center center / cover;
     color: #fff;
 }
 .step .tit {
