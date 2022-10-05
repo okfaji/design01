@@ -1,0 +1,363 @@
+@import url('default.css');
+@import url('common.css');
+
+.introduce h2 {
+    display: none; /*웹표준을 위한 제목 안보이도록 */
+}
+.introduce .life {
+    float: right; /* life와 research를 좌우로 배치하기 위해서 각자한테 float를 줌 - 물론 감싸는 요소에서 flex를 줘도 됨 */
+    width: 50%;
+    height: 800px;
+    padding: 171px 0 0 0; /* life안 a의 상단여백을 life에 padding을 줌. a에 margin으로 주면 모바일에서 잘 안들어감 */
+    background: url(../images/introduce_bg02.png) no-repeat center center / cover;
+    color: #FFF;
+}
+.introduce .life a { 
+    display: block;
+    position: relative; /* after 정렬의 기준 */
+    width: 500px;
+    height: 300px;
+    padding: 61px 0 0 60px; /* 내부에 있는 글자를 위한 여백 */
+    background-color: rgba(183,0,2,0.9);
+}
+.introduce .life a::after { /* 빨간색 영역 안에 흰색 선 그리기 */
+    position: absolute;
+    left: 60px;
+    bottom: 63px;
+    width: 370px;
+    height: 3px;
+    background-color: #FFF;
+    content: "";
+}
+.introduce .life a h3 {
+    margin: 0 0 14px 0; /* h3와 p 사이의 여백 */
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.introduce .life a h3 strong {
+    font-weight: 700;
+}
+.introduce .research {
+    float: left; /* life와 research를 좌우로 배치하기 위해서 각자한테 float를 줌 - 물론 감싸는 요소에서 flex를 줘도 됨 */
+    width: 50%;
+    height: 800px;
+    padding: 329px 0 0 0; /* research안 a의 상단여백을 research에 padding을 줌. a에 margin으로 주면 모바일에서 잘 안들어감 */
+    background: url(../images/introduce_bg01.png) no-repeat center center / cover;
+    color: #FFF;
+}
+.introduce .research a { 
+    display: block;
+    position: relative;  /* after 정렬의 기준 */
+    float: right; /* 오른쪽으로 정렬하기 위해서 float:right를 줌 */
+    width: 500px;
+    height: 300px;
+    padding: 61px 60px 0 0; /* 내부에 있는 글자를 위한 여백 */
+    background-color: rgba(2,54,101,0.9);
+    text-align: right; /* 내부에 있는 글자(h3/p)가 오른쪽 정렬 */
+}
+.introduce .research a::after {  /* 파란색 영역 안에 빨간색 선 그리기 */
+    position: absolute;
+    right: 60px;
+    bottom: 63px;
+    width: 370px;
+    height: 3px;
+    background-color: #B70002;
+    content: "";
+}
+.introduce .research a h3 {
+    margin: 0 0 14px 0; /* h3와 p 사이의 여백 */
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.introduce .research a h3 strong {
+    font-weight: 700;
+}
+@media screen and (max-width:640px){
+    .introduce .life {
+        float: none; /* life와 research는 모바일에서 위아래로 들어가므로 float 해제 */
+        width: auto; /* 넓이 50%로 제한 한것 해제 */
+        height: auto; /* 높이를 해제하고 하단 padding을 줌 */
+        padding: 64px 20px 70px 20px;
+    }
+    .introduce .life a {
+        width: auto;
+        height: 105px;
+        padding: 26px 0 0 0;
+        text-align: center;
+    }
+    .introduce .life a::after { /* 흰선의 위치와 길이 두께가 변경됨 */
+        left: calc(50% - 80px); /* 가운데 정렬하기 위해서 left:50% 가운데에서 넓이의 반을 왼쪽으로 이동하도록 계산 */
+        bottom: 20px;
+        width: 160px;
+        height: 2px;
+    }
+    .introduce .life a h3 {
+        margin: 0; /* 하단에 p태그가 사라지기 때문에 여백도 필요 없음 */
+        font-size: 18px;
+    }
+    .introduce .life a p { /* 모바일에서는 p가 안나타남 */
+        display: none;
+    }
+    .introduce .research {
+        float: none; /* life와 research는 모바일에서 위아래로 들어가므로 float 해제 */
+        width: auto; /* 넓이 50%로 제한 한것 해제 */
+        height: auto; /* 높이를 해제하고 하단 padding을 줌 */
+        padding: 64px 20px 70px 20px;
+    }
+    .introduce .research a { /* absolute를 유지하고 변경된 값 주기 */
+        float: none;
+        width: auto;
+        height: 105px;
+        padding: 26px 0 0 0;
+        text-align: center;
+    }
+    .introduce .research a::after { /* 빨간선의 위치와 길이 두께가 변경됨 */
+        right: calc(50% - 80px);
+        bottom: 20px;
+        width: 160px;
+        height: 2px;
+    }
+    .introduce .research a h3 {
+        margin: 0; /* 하단에 p태그가 사라지기 때문에 여백도 필요 없음 */
+        font-size: 18px;
+    }
+    .introduce .research a p { /* 모바일에서는 p가 안나타남 */
+        display: none;
+    }
+}/* introduce 반응형 종료 */
+
+.with {
+    height: 800px;
+    padding: 209px 0 0 0; /* 사회공헌 상단의 여백 */
+    background: url(../images/with_bg.png) no-repeat center center / cover;
+    color: #FFF; /* 사회공헌 안에 모든 글자가 흰색 */
+    text-align: center;  /* 사회공헌 안의 모든 글자가 가운데 정렬 */
+}
+.with .tit h2 {
+    font-size: 15px;
+    font-weight: 700;
+}
+.with .tit h2 span { 
+    /* 글자의 길이만큼 상단에 선을 긋기 위해서 span태그를 줌, before는 span의 넓이 만큼 선을 그림 */
+    position: relative;
+}
+.with .tit h2 span::before { /* span 글자의 넓이 만큼 선을 긋기 위해서 width:100%로 줌 */
+    position: absolute;
+    left: 0;
+    top: -3px;
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+    content: "";
+}
+.with .tit .sub_tit { 
+    margin: 11px 0 6px 0; /* h2와 하단 p태그 사이의 여백 */
+    font-size: 50px;
+    font-weight: 700;
+}
+.with .tit p span {
+    display: block; /* 줄을 바꾸기 위해서 block을 줌 */
+}
+.with ul {
+    margin: 69px 0 0 0; /* 상단 글자와 하단 아이콘간의 여백 */
+    display: flex; /* li를 화면에 가운데 정렬하기 위해서 flex와 justify-content:center를 줌 */
+    justify-content: center;
+}
+.with ul li {
+    margin: 0 90px 0 0; /* li는 넓이를 줘도 되고, 각 li간의 여백 90px를 줘도 된다. */
+}
+.with ul li:last-child {
+    margin-right: 0; /* 마지막 여백 삭제 */
+}
+.with ul li a {
+    display: block;
+}
+.with ul li a i {
+    font-size: 50px;
+    font-weight: 300;
+}
+.with ul li a strong {
+    display: block; /* 아이콘과 글자의 줄을 바꾸기 위해서는 글자를 감싼 strong에 display:block을 줘야함 */
+    font-size: 17px;
+    font-weight: 400;
+}
+@media screen and (max-width:640px){
+    .with {
+        height: auto;  /* 고정 높이는 풀어주고 하단 여백으르 padding으로 준다. */
+        padding: 73px 0 87px 0;
+    }
+    .with .tit h2 {
+        font-size: 13px;
+    }
+    .with .tit .sub_tit {
+        margin: 9px 0 6px 0;
+        font-size: 25px;
+    }
+    .with .tit p span {
+        display: inline; /* pc에서만 줄바꿈. 모바일에서는 1줄 */
+    }
+    .with ul {
+        margin: 42px 0 0 0;
+    }
+    .with ul li {
+        margin: 0;
+        width: 20%; /* 모바일에서는 5개가 꽉차게 들어가게 하기 위해서 넓이 20%를 주고 좌우여백을 삭제함 */
+    }
+    .with ul li a i {
+        font-size: 30px;
+    }
+    .with ul li a strong {
+        font-size: 13px;
+    }
+}/* with 반응형 완료 */
+
+.recruit {
+    height: 800px;
+    padding: 138px 0 0 0; /* 채용공고 상단의 여백 */
+    background: url(../images/recruit_bg.png) no-repeat center center / cover;
+}
+.recruit .tit {
+    color: #FFF;
+    text-align: center; /* 박스 상단의 글자만 흰색에 가운데 정렬 정렬이다. */
+}
+.recruit .tit h2 {
+    font-size: 15px;
+    font-weight: 700;
+}
+.recruit .tit h2 span {
+    /* 글자의 길이만큼 상단에 선을 긋기 위해서 span태그를 줌, before는 span의 넓이 만큼 선을 그림 */
+    position: relative; 
+}
+.recruit .tit h2 span::before { /* span 글자의 넓이 만큼 선을 긋기 위해서 width:100%로 줌 */
+    position: absolute;
+    left: 0;
+    top: -3px;
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+    content: "";
+}
+.recruit .tit .sub_tit {
+    margin: 11px 0 6px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.recruit .rc_wrap { /* notice와 ul을 좌우로 배치하기 위해서 감싸는 요소에 display:flex를 줌. 물론 각자에 float를 줘도 됨 */
+    display: flex;
+    margin: 82px 0 0 0;
+}
+.recruit .rc_wrap .notice { /* 채용공고 */
+    width: 510px;
+    margin: 0 40px 0 0;
+    background: url(../images/recruit_list_bg.png) no-repeat center center / cover;
+    color: #FFF;
+}
+.recruit .rc_wrap .notice a {
+    display: block;
+    height: 316px; /* 채용공고 박스 전체를 눌리게 하기 위해서 a에 높이를 줌 */
+    padding: 51px 0 0 50px;
+}
+.recruit .rc_wrap .notice a h3 {
+    margin: 0 0 18px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+.recruit .rc_wrap .notice a .more {
+    display: flex;
+    align-items: center;
+    margin: 56px 0 0 0;
+}
+.recruit .rc_wrap .notice a .more i {
+    margin: 0 0 0 6px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.recruit .rc_wrap ul { /* 인재상/인사제도/직무소개 각각의 li를 좌우로 배치하기 위해서 감싸는 요소에 display:flex를 줌 */
+    display: flex;
+}
+.recruit .rc_wrap ul li {
+    width: 230px; /* 넓이를 주고 오른쪽에 여백을 줌 */
+    margin: 0 20px 0 0;
+    background-color: #FFF;
+}
+.recruit .rc_wrap ul li:last-child {
+    margin-right: 0;
+}
+.recruit .rc_wrap ul li a {
+    display: block;
+    height: 316px; /* 박스 전체를 눌리게 하기 위해서 a에 높이를 줌 */
+    padding: 50px 0 0 30px;
+}
+.recruit .rc_wrap ul li a h3 {
+    margin: 0 0 25px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+.recruit .rc_wrap ul li a .more {
+    display: flex;
+    align-items: center;
+    margin: 56px 0 0 0;
+}
+.recruit .rc_wrap ul li a .more i {
+    margin: 0 0 0 6px;
+    font-size: 16px;
+    font-weight: 300;
+}
+@media screen and (max-width:640px){
+    .recruit {
+        height: auto;
+        padding: 73px 0 90px 0;
+    }
+    .recruit .tit h2 {
+        font-size: 13px;
+    }
+    .recruit .tit .sub_tit {
+        margin: 9px 0 6px 0;
+        font-size: 25px;
+    }
+    .recruit .rc_wrap {
+        display: block;  /* 모바일에서는 채용공고와 인재상이 위아래로 들어가기때문에 display:flex 해제를 위해서 display:block을 줌 */
+        margin: 22px 0 0 0;
+    }
+    .recruit .rc_wrap .notice {
+        width: auto; /* 넓이제한 풀기. 가로로 꽉차야함 */
+        margin: 0;
+    }
+    .recruit .rc_wrap .notice a {
+        height: auto;
+        padding: 22px 0 29px 20px;
+    }
+    .recruit .rc_wrap .notice a h3 {
+        margin: 0 0 9px 0;
+        font-size: 20px;
+    }
+    .recruit .rc_wrap .notice a .more {
+        display: none; /* 모바일에서 자세히보기는 안보임 */
+    }
+    .recruit .rc_wrap ul {
+        margin: 16px 0 0 0;
+    }
+    .recruit .rc_wrap ul li {
+        width: calc(33.33% - 11px); 
+        /* 여백은 동일하게 유지하면서 넓이만 조절하기 : 중간 여백의 합이 16+16=32px li가 3개니까 3으로 나누면 대충 11px : 그래서 33.33% - 11px */
+        margin: 0 16px 0 0; /* 오른쪽에 여백 16px은 고정 */
+        background-color: #FFF;
+    }
+    .recruit .rc_wrap ul li a {
+        height: auto;
+        padding: 19px 0;
+        text-align: center;
+    }
+    .recruit .rc_wrap ul li a h3 {
+        margin: 0;
+        font-size: 15px;
+    }
+    .recruit .rc_wrap ul li a p {
+        display: none; /* 모바일에서 p태그 숨김 */
+    }
+    .recruit .rc_wrap ul li a .more {
+        display: none; /* 모바일에서 자세히보기 숨김 */
+    }
+}/* recruit 반응형 완료 */
