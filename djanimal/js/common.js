@@ -74,10 +74,10 @@ $(document).ready(function(){
         --> pc에서는 1차메뉴를 클릭하면 첫번째 하위메뉴로 이동 (href값으로 이동)
             그러나 모바일에서는 하위메뉴 페이지로 이동 하면 안됨, 하위 메뉴를 열어야함.
     */
-    $('.header .gnb > ul > li').on('click', function(e){
+    $('.header .gnb > ul > li > a').on('click', function(e){
         if(pcMobile == 'mobile'){ //모바일에서만 실행
             e.preventDefault();
-            $(this).toggleClass('sub_open');
+            $(this).parents('li').toggleClass('sub_open');
             /* 4개의 1차메뉴 li중에서 클릭한 li를 this라고 함 */
         }
         /* 해당 요소를 클릭했을때 기본적으로 발생하는 이벤트를 취소 - href로 페이지가 이동하는걸 취소 시킴 */
