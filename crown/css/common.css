@@ -68,3 +68,172 @@ html, body {
 .skip_nav a:focus {
     top: 0;
 }
+
+.header {
+    height: 100px;
+}
+.header .logo {
+    float: left;
+    margin: 33px 0 0 0;
+    font-size: 0;
+    line-height: 0;
+}
+.header .logo img {
+    width: 135px;
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb .gnb_open {
+    display: none;
+}
+.header .gnb ul li {
+    float: left;
+}
+.header .gnb ul li a {
+    display: block;
+    padding: 0 48px;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 100px;
+}
+@media screen and (max-width:1200px){
+    .header .logo {
+        margin: 35px 0 0 0;
+    }
+    .header .logo img {
+        width: 100px;
+    }
+    .header .gnb ul li a {
+        padding: 0 20px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:640px){
+    .header {
+        height: 60px;
+    }
+    .header .logo {
+        margin: 18px 0 0 0;
+    }
+    .header .logo img {
+        width: 95px;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        padding: 18px 0 0 0;
+    }
+    .header .gnb .gnb_open img {
+        width: 28px;
+    }
+    .header .gnb ul {
+        display: none;
+    }
+}/* header 반응형 종료 */
+
+.footer {
+    position: relative;
+}
+.footer .family {
+    position: absolute;
+    right: calc(50% - 700px);
+    /* wrapper없이 컨텐츠 영역의 오른쪽 끝에 family를 배치
+       right: 50%에서 콘텐츠의 넓이 절반 (700px)을 빼줌 */
+    top: 98px;
+}
+.footer .family button {
+    width: 147px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    color: #666666;
+}
+.footer .ftop {
+    height: 70px;
+    border-bottom: 1px solid #ededed;
+}
+.footer .ftop .fnav li {
+    position: relative;
+    float: left;
+    margin-right: 40px;
+}
+.footer .ftop .fnav li::after {
+    position: absolute;
+    right: -21px;
+    top: 30px;
+    width: 1px;
+    height: 12px;
+    background-color: #ededed;
+    content: "";
+}
+.footer .ftop .fnav li:last-child::after {
+    display: none;
+}
+.footer .ftop .fnav li.privacy a {
+    font-weight: 700;
+}
+.footer .ftop .fnav li a {
+    display: block;
+    color: #666666;
+    line-height: 70px; /* ftop 높이에 위아래 가운에 글자를 배치하는 가장 쉬운 방법 */
+}
+.footer .fsub .flogo {
+    float: left;
+}
+.footer .fsub .flogo img {
+    width: 112px;
+    filter: grayscale(100%);
+}
+.footer .fsub .inner {
+    margin: 33px 0 80px 175px;
+}
+.footer .fsub .finfo span {
+    display: inline-block;
+    margin: 0 20px 5px 0;
+    color: #666666;
+}
+.footer .fsub .copyright {
+    margin: 10px 0 0 0;
+    color: #999999;
+}
+@media screen and (max-width:1440px){
+    .footer .family {
+        right: 20px;
+    }
+}
+@media screen and (max-width:1000px){
+    .footer .family {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 35px 0 20px 20px;
+    }
+    .footer .family button {
+        width: 130px;
+        height: 24px;
+    }
+    .footer .ftop {
+        height: auto;
+        border-bottom: 0;
+    }
+    .footer .ftop .fnav li {
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+    .footer .ftop .fnav li::after {
+        right: -15px;
+        top: 5px;
+        height: 10px;
+    }
+    .footer .ftop .fnav li a {
+        line-height: 1.5; 
+    }
+    .footer .fsub .flogo {
+        display: none;
+    }
+    .footer .fsub .inner {
+        margin: 20px 0 40px 0;
+    }
+    .footer .fsub .finfo span {
+        margin: 0 15px 5px 0;
+    }
+}
