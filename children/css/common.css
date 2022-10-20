@@ -129,10 +129,10 @@ html, body {
 
 /*
     1440 - 
-    1200
-    1000
-    800
-    640
+    1200 - 
+    1000 - 
+    800 - 
+    640 
 */
 @media screen and (max-width:1200px){
     .header .gnb ul li a {
