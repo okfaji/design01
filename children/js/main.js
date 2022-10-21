@@ -8,6 +8,8 @@ $(document).ready(function(){
 		navigationPosition: 'right', /* 위치 */
 		navigationTooltips: ['메인', '보건통계', '사업소개', '현장소식', '지원사업'], /* 툴팁 */
 		showActiveTooltip: false, /* 현재 활성화된 페이지의 툴팁 보이기 */
+		
+		// scrollOverflow: false, 
 
 		afterLoad: function(origin, destination, direction, trigger){
 			//console.log(destination.index);
