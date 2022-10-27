@@ -199,6 +199,13 @@ html, body {
 .visual .popup { /* .visual .popup */
   height: 100vh;
 }
+.visual .popup ul li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .visual .popup .btn_wrap {
   display: flex;
   align-items: center;
@@ -206,6 +213,10 @@ html, body {
   left: calc(50% - 700px);
   top: calc(50% + 110px);
   z-index: 10;
+}
+.visual .popup .btn_wrap .btn_paging {
+  font-size: 0;
+  line-height: 0;
 }
 .visual .popup .btn_wrap .btn_paging span {
   opacity: 0.5;
@@ -225,9 +236,22 @@ html, body {
 .visual .popup .btn_wrap .btn_stop {
   width: 7px;
   height: 4px;
+  margin-left: 5px;
   background-image: url(/design01/bntailor/images/main/visual_btn_stop.svg);
   background-position: center center;
   background-repeat: no-repeat;
   font-size: 0;
   line-height: 0;
+}
+.visual .popup .btn_wrap .btn_stop.play { /* .btn_stop.play */
+  background-image: url(/design01/bntailor/images/main/visual_btn_play.svg);
+}
+
+@media screen and (max-width: 1440px) {
+  .visual .tit {
+    left: 20px;
+  }
+  .visual .popup .btn_wrap {
+    left: 20px;
+  }
 }

@@ -32,6 +32,12 @@
     }
     .popup { /* .visual .popup */
         height: 100vh;
+        ul li img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .btn_wrap {
             display: flex;
             align-items: center;
@@ -40,6 +46,8 @@
             top: calc(50% + 110px);
             z-index: 10;
             .btn_paging {
+                font-size: 0;
+                line-height: 0;
                 span {
                     opacity: 0.5;
                     width: 70px;
@@ -59,11 +67,27 @@
             .btn_stop {
                 width: 7px;
                 height: 4px;
+                margin-left: 5px;
                 background-image: url(/design01/bntailor/images/main/visual_btn_stop.svg);
                 background-position: center center;
                 background-repeat: no-repeat;
                 font-size: 0;
                 line-height: 0;
+                &.play { /* .btn_stop.play */
+                    background-image: url(/design01/bntailor/images/main/visual_btn_play.svg);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1440px){
+    .visual {
+        .tit {
+            left: 20px;
+        }
+        .popup { 
+            .btn_wrap {
+                left: 20px;
             }
         }
     }
