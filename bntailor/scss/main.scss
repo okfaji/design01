@@ -33,6 +33,8 @@
     .popup { /* .visual .popup */
         height: 100vh;
         .btn_wrap {
+            display: flex;
+            align-items: center;
             position: absolute;
             left: calc(50% - 700px);
             top: calc(50% + 110px);
@@ -53,6 +55,15 @@
                         opacity: 1;
                     }
                 }
+            }
+            .btn_stop {
+                width: 7px;
+                height: 4px;
+                background-image: url(/design01/bntailor/images/main/visual_btn_stop.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                font-size: 0;
+                line-height: 0;
             }
         }
     }

@@ -200,6 +200,8 @@ html, body {
   height: 100vh;
 }
 .visual .popup .btn_wrap {
+  display: flex;
+  align-items: center;
   position: absolute;
   left: calc(50% - 700px);
   top: calc(50% + 110px);
@@ -219,4 +221,13 @@ html, body {
 }
 .visual .popup .btn_wrap .btn_paging span.swiper-pagination-bullet-active {
   opacity: 1;
+}
+.visual .popup .btn_wrap .btn_stop {
+  width: 7px;
+  height: 4px;
+  background-image: url(/design01/bntailor/images/main/visual_btn_stop.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-size: 0;
+  line-height: 0;
 }
