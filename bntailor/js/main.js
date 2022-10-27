@@ -34,6 +34,28 @@ $(document).ready(function(){
             $(this).addClass('play');
             $(this).text('재생');
         }
+    });//visual stop
+
+    /* fabric 이미지 스크롤 효과 */
+    let scrolling;
+    let moveTop;
+    let objName = $('.fabric .bg img');
+    fabScroll(); //로딩됐을때 한번
+    $(window).scroll(function(){ //스크롤 할때마다 실행
+        fabScroll();
     });
 
-});
+    function fabScroll(){ // 스크롤 값을 계산해서 fabric의 이미지를 움직일 함수
+        /* 스크롤값을 요소의 위치값으로 변경해서 스타일을 적용
+          효과를 줄 요소가 화면의 하단에 등장하기 시작했을때부터 
+          스크롤 한값을 새로 계산해서 해당 요소에 줘야 해당 요소가 화면 어디에 배치되어 있든
+          자연스럽게 패럴랙스 효과를 줄 수 있음
+        */
+        scrolling = $(window).scrollTop();
+        console.log(scrolling, 'scroll');
+        console.log(objName.offset().top, 'top');
+        moveTop = scrolling*0.15;
+        // objName.css('transform','translate(0, -'+moveTop+'px)');
+    }
+
+});//document.ready

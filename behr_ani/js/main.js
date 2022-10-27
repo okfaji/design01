@@ -55,11 +55,11 @@ $(document).ready(function(){
     console.log(visTop);
     let proTop = $('.product .list ul li:nth-child(3)').position().top;
     console.log(proTop);
-    $('.visual .bg img').animate({
-        'transform': 'translateY(100px)'
-    },300);
+    
+    let scroll = $(window).scrollTop();
     $(window).scroll(function(){
-
+        scroll = $(window).scrollTop();
+        $('.product .list ul li a em img').css('transform', 'translateY(-'+ scroll*0.1 +'px)');
     });
 })
 
