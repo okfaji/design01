@@ -46,6 +46,9 @@
             top: calc(50% + 110px);
             z-index: 10;
             .btn_paging {
+                display: flex; 
+                /* span이 여러개 발생해도 한줄로 나타남 
+                - 단, 내가 준 넓이보다 작게 구현될 수도 있음 */
                 font-size: 0;
                 line-height: 0;
                 span {
@@ -88,6 +91,39 @@
         .popup { 
             .btn_wrap {
                 left: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .visual .tit h2 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:640px){
+    .visual {
+        .tit {
+            left: 50%;
+            width: calc(100% - 40px);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            h2 {
+                font-size: 30px;
+            }
+        }
+        .popup { /* .visual .popup */
+            .btn_wrap {
+                left: 50%;
+                top: calc(50% + 90px);
+                transform: translate(-50%, 0);
+                .btn_paging {
+                    span {
+                        width: 40px;
+                    }
+                }
+                .btn_stop {
+                    display: none;
+                }
             }
         }
     }
