@@ -393,26 +393,24 @@ html, body {
   background-color: #33302D;
   color: rgba(255, 255, 255, 0.8);
 }
-.fabric h2 {
+.fabric .inner {
   position: relative;
   z-index: 10;
+  width: 670px;
+}
+.fabric h2 {
   padding: 256px 0 35px 0;
   color: #FFFFFF;
   font-size: 30px;
 }
 .fabric .tit {
-  position: relative;
-  z-index: 10;
   font-family: "Noto Serif KR", serif;
   color: #FFFFFF;
   font-size: 40px;
   font-weight: 700;
 }
 .fabric .cnt {
-  position: relative;
-  z-index: 10;
   margin: 42px 0 60px 0;
-  width: 640px;
 }
 .fabric .tag {
   position: relative;
@@ -441,7 +439,6 @@ html, body {
   height: 120%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: 0.5s;
 }
 .fabric .bg2 {
   position: absolute;
@@ -461,7 +458,276 @@ html, body {
      object-fit: cover;
 }
 
+@media screen and (max-width: 1440px) {
+  .fabric .inner {
+    width: 55%;
+  }
+  .fabric .tit .m_no {
+    display: none;
+  }
+  .fabric .bg {
+    left: 50%;
+  }
+  .fabric .bg2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fabric .inner {
+    width: 50%;
+  }
+  .fabric h2 {
+    font-size: 25px;
+  }
+  .fabric .tit {
+    font-size: 30px;
+  }
+  .fabric .bg {
+    left: 45%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .fabric .inner {
+    width: 80%;
+  }
+  .fabric h2 {
+    padding-top: 150px;
+  }
+  .fabric .bg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 716px;
+  }
+  .fabric .bg::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    content: "";
+  }
+}
+@media screen and (max-width: 640px) {
+  .fabric {
+    padding: 0;
+  }
+  .fabric h2 {
+    padding: 64px 0 8px 0;
+    font-size: 20px;
+  }
+  .fabric .tit {
+    font-size: 25px;
+  }
+  .fabric .tit .m_no {
+    display: none;
+  }
+  .fabric .cnt {
+    display: none;
+  }
+  .fabric .tag {
+    margin: 23px 0 15px 0;
+  }
+  .fabric .tag span {
+    margin: 0 11px 0 0;
+  }
+  .fabric .bg {
+    position: relative;
+    overflow: hidden;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: 165px;
+  }
+  .fabric .bg img {
+    transform: translateY(0) !important; /* 애니메이션 안함 */
+    width: 150%;
+    height: 150%;
+  }
+  .fabric .bg2 {
+    display: none;
+  }
+}
 .product {
-  height: 1000px;
   background-color: #33302D;
+  color: rgba(255, 255, 255, 0.8);
+}
+.product h2 {
+  font-family: "Noto Serif KR", serif;
+  padding: 112px 0 99px 0;
+  color: #FFFFFF;
+  font-size: 60px;
+  font-weight: 700;
+}
+.product .list {
+  display: block;
+  position: relative;
+}
+.product .list::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.product .list .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 1.3;
+}
+.product .list ul {
+  float: right;
+}
+.product .list ul li {
+  position: relative;
+  width: 440px;
+  margin-bottom: 98px;
+}
+.product .list ul li a {
+  display: block;
+}
+.product .list ul li a .pic {
+  overflow: hidden;
+  height: 394px;
+}
+.product .list ul li a .pic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product .list ul li a h3 {
+  margin-top: -35px;
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: 700;
+}
+.product .list ul li a p {
+  margin: 10px 0 0 0;
+}
+.product .list ul.item1 {
+  margin: 283px 0 0 80px;
+}
+
+@media screen and (max-width: 1280px) {
+  .product .list .tit {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 0 10px 0;
+  }
+  .product .list .tit .m_no {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .product .list ul {
+    width: calc(50% - 40px);
+  }
+  .product .list ul li {
+    width: auto;
+  }
+  .product .list ul.item1 {
+    margin: 283px 0 0 80px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .product h2 {
+    padding: 47px 0 29px 0;
+    font-size: 30px;
+  }
+  .product .list .tit {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+  }
+  .product .list ul {
+    float: none;
+    width: auto;
+  }
+  .product .list ul li {
+    width: auto;
+    margin-bottom: 40px;
+  }
+  .product .list ul li a {
+    display: block;
+  }
+  .product .list ul li a .pic {
+    overflow: hidden;
+    height: 394px;
+  }
+  .product .list ul li a .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .product .list ul li a h3 {
+    margin-top: -35px;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .product .list ul li a p {
+    margin: 10px 0 0 0;
+  }
+  .product .list ul li:nth-child(1) .pic, .product .list ul li:nth-child(3) .pic, .product .list ul li:nth-child(5) .pic {
+    width: 65%;
+    height: 98px;
+    margin-left: 35%;
+  }
+  .product .list ul li:nth-child(1) p, .product .list ul li:nth-child(3) p, .product .list ul li:nth-child(5) p {
+    margin-right: 35%;
+  }
+  .product .list ul li:nth-child(2) .pic, .product .list ul li:nth-child(4) .pic {
+    width: 65%;
+    height: 98px;
+    margin-right: 35%;
+  }
+  .product .list ul li:nth-child(2) h3, .product .list ul li:nth-child(4) h3 {
+    margin-left: 35%;
+  }
+  .product .list ul li:nth-child(2) p, .product .list ul li:nth-child(4) p {
+    margin-left: 35%;
+  }
+  .product .list ul.item1 {
+    margin: 0;
+  }
+}
+.product2 {
+  position: relative;
+  padding: 120px 0;
+  margin: 0 0 1000px 0;
+  background-color: #33302D;
+  color: #FFF;
+}
+.product2 h2 {
+  font-family: "Noto Serif KR", serif;
+  margin: 0 0 40px 400px;
+  font-size: 60px;
+}
+.product2 .list {
+  display: flex;
+  justify-content: flex-end;
+}
+.product2 .list .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 30px;
+  white-space: nowrap;
+}
+.product2 .list ul li {
+  width: 440px;
+}
+.product2 .list ul li .pic img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
