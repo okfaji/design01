@@ -186,6 +186,7 @@ html, body {
   z-index: 300;
   width: 100%;
   height: 100px;
+  transition: 0.5s;
 }
 .header .logo {
   float: left;
@@ -207,6 +208,13 @@ html, body {
   color: #FFFFFF;
   font-size: 22px;
   line-height: 100px; /* header의 높이 */
+}
+.header.fixed {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1440px) {
@@ -393,26 +401,24 @@ html, body {
   background-color: #33302D;
   color: rgba(255, 255, 255, 0.8);
 }
-.fabric h2 {
+.fabric .inner {
   position: relative;
   z-index: 10;
+  width: 670px;
+}
+.fabric h2 {
   padding: 256px 0 35px 0;
   color: #FFFFFF;
   font-size: 30px;
 }
 .fabric .tit {
-  position: relative;
-  z-index: 10;
   font-family: "Noto Serif KR", serif;
   color: #FFFFFF;
   font-size: 40px;
   font-weight: 700;
 }
 .fabric .cnt {
-  position: relative;
-  z-index: 10;
   margin: 42px 0 60px 0;
-  width: 640px;
 }
 .fabric .tag {
   position: relative;
@@ -441,7 +447,6 @@ html, body {
   height: 120%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: 0.5s;
 }
 .fabric .bg2 {
   position: absolute;
@@ -461,7 +466,394 @@ html, body {
      object-fit: cover;
 }
 
+@media screen and (max-width: 1440px) {
+  .fabric .inner {
+    width: 55%;
+  }
+  .fabric .tit .m_no {
+    display: none;
+  }
+  .fabric .bg {
+    left: 50%;
+  }
+  .fabric .bg2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fabric .inner {
+    width: 50%;
+  }
+  .fabric h2 {
+    font-size: 25px;
+  }
+  .fabric .tit {
+    font-size: 30px;
+  }
+  .fabric .bg {
+    left: 45%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .fabric .inner {
+    width: 80%;
+  }
+  .fabric h2 {
+    padding-top: 150px;
+  }
+  .fabric .bg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 716px;
+  }
+  .fabric .bg::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    content: "";
+  }
+}
+@media screen and (max-width: 640px) {
+  .fabric {
+    padding: 0;
+  }
+  .fabric h2 {
+    padding: 64px 0 8px 0;
+    font-size: 20px;
+  }
+  .fabric .tit {
+    font-size: 25px;
+  }
+  .fabric .tit .m_no {
+    display: none;
+  }
+  .fabric .cnt {
+    display: none;
+  }
+  .fabric .tag {
+    margin: 23px 0 15px 0;
+  }
+  .fabric .tag span {
+    margin: 0 11px 0 0;
+  }
+  .fabric .bg {
+    position: relative;
+    overflow: hidden;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: 165px;
+  }
+  .fabric .bg img {
+    transform: translateY(0) !important; /* 애니메이션 안함 */
+    width: 150%;
+    height: 150%;
+  }
+  .fabric .bg2 {
+    display: none;
+  }
+}
 .product {
-  height: 1000px;
   background-color: #33302D;
+  color: rgba(255, 255, 255, 0.8);
+}
+.product h2 {
+  font-family: "Noto Serif KR", serif;
+  padding: 112px 0 99px 0;
+  color: #FFFFFF;
+  font-size: 60px;
+  font-weight: 700;
+}
+.product .list {
+  display: block;
+  position: relative;
+}
+.product .list::after {
+  display: block;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+}
+.product .list .tit {
+  /* position: sticky는 감싸는 요소에 overflow:hidden이 없어야 한다.
+    하지만 홈페이지 전체에 id="wrap" 이 스타일에 overflow:hidden;이 들어감
+    overflow를 주지 않고 코딩은 어려움. 그래서 sticky는 사용불가 
+
+    고정될 요소에 고정될때는 position: fixed를 줘야함.
+    fixed는 body와만 정렬 
+    <div class="list">          -- relative
+      <div class="tit"></div>   -- absolute
+    </div>
+    tit이 absolute일때는 relative를 준 list를 기준으로 정렬함.
+    하지만 fixed로 변경되면 무조건 body랑 정렬
+    정렬의 기준값이 변경됨.... (left가 fixed일때랑 absolute일때랑 바뀜)
+    실제 화면상에서도 left의 위치는 변경X 
+    absolute일때와 fixed일때 위치를 동일하게 left값을 줘야함.
+  */
+  position: absolute;
+  left: calc(50% - 700px);
+  top: 0;
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 1.3;
+}
+.product .list .tit.fixed {
+  position: fixed;
+  top: 130px;
+}
+.product .list .tit.end {
+  position: absolute;
+  top: auto;
+  bottom: 100px;
+}
+.product .list ul {
+  float: right;
+}
+.product .list ul li {
+  position: relative;
+  width: 440px;
+  margin-bottom: 98px;
+}
+.product .list ul li a {
+  display: block;
+}
+.product .list ul li a .pic {
+  overflow: hidden;
+  height: 394px;
+}
+.product .list ul li a .pic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product .list ul li a h3 {
+  margin-top: -35px;
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: 700;
+}
+.product .list ul li a p {
+  margin: 10px 0 0 0;
+}
+.product .list ul.item1 {
+  margin: 283px 0 0 80px;
+}
+
+@media screen and (max-width: 1440px) {
+  .product .list .tit {
+    left: 0;
+  }
+  .product .list .tit.fixed {
+    left: 20px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .product .list .tit {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 0 20px 0;
+    font-size: 20px;
+  }
+  .product .list .tit .m_no {
+    display: none;
+  }
+  .product .list .tit.fixed {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  .product .list .tit.end {
+    position: relative;
+    bottom: auto;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .product h2 {
+    padding: 50px 0 50px 0;
+    font-size: 45px;
+  }
+  .product .list ul {
+    width: calc(50% - 40px);
+  }
+  .product .list ul li {
+    width: auto;
+  }
+  .product .list ul.item1 {
+    margin: 283px 0 0 80px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .product h2 {
+    padding: 47px 0 29px 0;
+    font-size: 30px;
+  }
+  .product .list .tit {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+  }
+  .product .list ul {
+    float: none;
+    width: auto;
+  }
+  .product .list ul li {
+    width: auto;
+    margin-bottom: 40px;
+  }
+  .product .list ul li a {
+    display: block;
+  }
+  .product .list ul li a .pic {
+    overflow: hidden;
+    height: 98px;
+  }
+  .product .list ul li a h3 {
+    margin-top: -20px;
+    font-size: 25px;
+  }
+  .product .list ul li a p {
+    margin: 5px 0 0 0;
+  }
+  .product .list ul li:nth-child(1) .pic, .product .list ul li:nth-child(3) .pic, .product .list ul li:nth-child(5) .pic {
+    width: 65%;
+    margin-left: 35%;
+  }
+  .product .list ul li:nth-child(1) p, .product .list ul li:nth-child(3) p, .product .list ul li:nth-child(5) p {
+    margin-right: 35%;
+  }
+  .product .list ul li:nth-child(2) .pic, .product .list ul li:nth-child(4) .pic {
+    width: 65%;
+    margin-right: 35%;
+  }
+  .product .list ul li:nth-child(2) h3, .product .list ul li:nth-child(4) h3 {
+    margin-left: 35%;
+  }
+  .product .list ul li:nth-child(2) p, .product .list ul li:nth-child(4) p {
+    margin-left: 35%;
+  }
+  .product .list ul.item1 {
+    margin: 0;
+  }
+}
+.insta {
+  position: relative;
+  margin: 0 0 102px 0;
+}
+.insta h2 {
+  font-family: "Noto Serif KR", serif;
+  position: relative;
+  z-index: 10;
+  padding: 136px 0 68px 0;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.insta .list ul li {
+  width: 320px;
+  font-size: 0; /* 이미지 하단 여백 삭제 */
+  line-height: 0;
+}
+.insta .list ul li a {
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.insta .list ul li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.insta .list ul li:nth-child(1), .insta .list ul li:nth-child(3), .insta .list ul li:nth-child(5) {
+  padding: 30px;
+}
+.insta .bg_txt {
+  font-family: "Noto Serif KR", serif;
+  position: absolute;
+  left: 0;
+  top: 75px;
+  color: #F4F4F4;
+  font-size: 120px;
+  font-weight: 300;
+  white-space: nowrap; /* 줄바꿈 금지 */
+  -webkit-animation-name: bg_txt_ani;
+          animation-name: bg_txt_ani;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  /* 기본 ease 가속도 - 동일한 속도로 애니메이션 주려면 linear */
+}
+
+@-webkit-keyframes bg_txt_ani {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50.3%);
+  }
+  /* 무조건 html에서 글자를 동일한 글자를 두번 입력
+     css 애니메이션으로 절반을 이동 
+     그럼 두번째 단락의 글자 다시 나타남.
+  */
+}
+
+@keyframes bg_txt_ani {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50.3%);
+  }
+  /* 무조건 html에서 글자를 동일한 글자를 두번 입력
+     css 애니메이션으로 절반을 이동 
+     그럼 두번째 단락의 글자 다시 나타남.
+  */
+}
+@media screen and (min-width: 1441px) {
+  .insta .list {
+    width: calc(100% + 680px);
+    margin-left: -360px !important;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .insta .list ul li:nth-child(1), .insta .list ul li:nth-child(3), .insta .list ul li:nth-child(5) {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .insta h2 {
+    padding: 80px 0 40px 0;
+    font-size: 45px;
+  }
+  .insta .list ul li {
+    width: 250px;
+  }
+  .insta .bg_txt {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .insta h2 {
+    padding: 70px 0 20px 0;
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .insta h2 {
+    font-size: 30px;
+  }
+  .insta .list ul li {
+    width: 200px;
+  }
 }
