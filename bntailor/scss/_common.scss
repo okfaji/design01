@@ -89,6 +89,12 @@ html, body {
     .logo {
         float: left;
         margin: 30px 0 0 40px;
+        svg {
+            width: 161px;
+            text {
+                fill: #FFF;
+            }
+        }
     }
     .gnb {
         float: right;
@@ -111,16 +117,9 @@ html, body {
             }
         }
     }
-    &.fixed { //header.fixed header에 fixed 클래스가 추가됐을때 - header 고정 
-        position: fixed;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px); //브라우저 호환성 때문에 
-        background-color: rgba(0,0,0,0.1);
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
 }
 @media screen and (max-width:1440px){
-    .header .logo a img {
+    .header .logo a svg {
         width: 130px;
     }
     .header .gnb .gnb_wrap ul li a {
@@ -128,7 +127,7 @@ html, body {
     }
 }
 @media screen and (max-width:1440px){
-    .header .logo a img {
+    .header .logo a svg {
         width: 120px;
     }
     .header .gnb .gnb_wrap ul li a {
@@ -142,7 +141,7 @@ html, body {
         height: 60px;
         .logo {
             margin: 16px 0 0 20px;
-            a img {
+            a svg {
                 width: 108px;
             }
         }
@@ -231,6 +230,7 @@ html, body {
                     그 밖에 있는 gnb_open, gnb_wrap과의 순서를 절대 조정 불가능함
 
                 */
+                display: none;
                 opacity: 0;
                 transition: opacity 0.5s;
                 position: fixed;
@@ -265,6 +265,7 @@ html, body {
                     right: 0;
                 }
                 &::after {
+                    display: block;
                     opacity: 1;
                 }
             }

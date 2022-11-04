@@ -2,18 +2,216 @@
 @import "_default.scss";
 @import "_common.scss";
 
+
+.header.fixed {
+    position: fixed;
+    background-color: rgba(255,255,255,0.8);
+    .logo svg text {
+        fill: #1D1D1D;
+    }
+    .gnb .gnb_wrap ul li a {
+        color: #1D1D1D;
+    }
+    .gnb .gnb_open span {
+        background-color: #3D3D3D;
+    }
+}
+
 /* 서브 공통 레이아웃 */
 
 .sub_visual {
-    height: 628px;
-    background: url(/design01/bntailor/images/sub/sub_visual1.png) no-repeat center center/cover;
-    clip-path: path('M0,664.23L278.3,835.5L1920,701.16V0H0V664.23z');
-    clip-rule:evenodd;
+    position: relative;
+    height: 640px;
+    margin: 0 0 18px 0;
+    .sub_visual_bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 700px; /* clip-path로 위치가 정확하지 않아 배경을 별도의 요소에 줌 */
+        background-image: url(/design01/bntailor/images/sub/sub_visual1.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        clip-path: url(#sub_visual_path);
+        /* html에서 입력한 svg clipPath에 지정된 id값을 url로 연결하면 해당요소의 path값이 적용됨
+        배경이 표시될 영역으로 활용됨. 
+        path로 직접 경로를 사용했는데 안되는 경우, svg path의 크기를 변경해야 하는 경우 
+        이런 방식으로 사용함.
+        */
+    }
+    &.sub_bg1 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual1.png);
+    }
+    &.sub_bg2 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual2.png);
+    }
+    &.sub_bg3 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual3.png);
+    }
+    &.sub_bg4 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual4.png);
+    }
+    &.sub_bg5 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual5.png);
+    }
+    &.sub_bg6 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual6.png);
+    }
+    &.sub_bg7 .sub_visual_bg {
+        background-image: url(/design01/bntailor/images/sub/sub_visual7.png);
+    }
+    .sub_visual_path {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        svg {
+            width: 1px;
+            height: 1px;
+        }
+    }
+    .location {
+        display: flex;
+        padding: 340px 0 0 10px;
+        color: $w_basic_color;
+        span {
+            position: relative;
+            margin-right: 18px;
+            &::after {
+                position: absolute;
+                right: -12px;
+                top: 11px;
+                width: 5px;
+                height: 7px;
+                background-color: rgba(255,255,255,0.8);
+                clip-path: polygon(22% 0%, 50% 0%, 85% 51.8%, 50.5% 99.5%, 22% 100%, 57.5% 50.3%);
+                /* 이미지로 하는것이 아니라 svg를 이용해서 아이콘을 그리는데, 여러번 반복해서 들어가는 경우
+                   css에서 원하는 도형의 크기와 넓이를 주고, 배경색으로 아이콘의 색상을 주고
+                   clip-path: 로 path 값을 줌.. 
+                   장점은 css로 여러요소를 선택해서 도형을 그릴 수 있다는 장점
+                   단점 사이즈를 수정이 불가함 (단, %로 path를 그릴 것은 가능)
+                        작은 것은 적용 안됨..
+                        브라우저 호환성이 떨어짐 (안되는 브라우저가 있음)
+                        path를 그리는 방법이 많은데... 일부는 적용이 안됨. (html에서는 되도 css에서 안됨)
+                */
+                content: "";
+            }
+            &:last-child::after {
+                display: none;
+            }
+        }
+    }
+    .tit {
+        @include font_serif;
+        color: $w_tit_color;
+        font-size: 60px;
+        font-weight: 700;
+    }
 }
-.container {
-    svg {
-        path {
-            fill: #9D856D;
+@media screen and (max-width:1000px){
+    .sub_visual {
+        height: 245px;
+        margin: 0 0 10px 0;
+        .sub_visual_bg {
+            height: 100%;
+            clip-path: none;
+        }
+        .location {
+            padding: 150px 0 0 0;
+            span {
+                margin-right: 14px;
+                &::after {
+                    right: -10px;
+                    top: 8px;
+                }
+            }
+        }
+        .tit {
+            font-size: 30px;
+        }
+    }
+}
+.lnb {
+    position: relative;
+    height: 80px;
+    .lnb_fix {
+        /* 나중에 fixed로 변경될 콘텐츠 - absolute로 코딩하는게 좋음 */
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 200;
+        width: 100%;
+        height: 80px;
+    }
+    &.fixed .lnb_fix {
+        position: fixed;
+        top: 100px; /* header 높이만큼 아래 */
+        background-color: rgba(255,255,255,0.8);
+    }
+    .lnb_wrap {
+        overflow-x: auto; /* lnb_wrap의 넓이보다 ul의 넓이가 더 길어길때만 스크롤바가 생성 */
+        overflow-y: hidden;
+        padding: 20px 0 5px 0;
+        ul {
+            white-space: nowrap; 
+            /* 하위 요소들 줄바꿈 금지 - 블럭요소는 안됨, float들어간 요소도 안됨.  
+               inline요소나 inline-block만 적용 됨. 
+               단, inline-block 요소의 사이사이에 space 한칸의 여백이 들어감.
+               그럼 요소들 사이의 여백을 이를 감안해서 줄이면 됨
+            */
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                    padding: 0 30px;
+                    color: #999999;
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+                &:first-child {
+                    a {
+                        padding-left: 0;
+                    }
+                }
+                &.active {
+                    a {
+                        position: relative;
+                        color: #1D1D1D;
+                        &::before {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 19px;
+                            height: 2px;
+                            background-color: #9D856D;
+                            content: "";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .lnb {
+        height: 45px;
+        .lnb_fix {
+            height: 45px;
+        }
+        &.fixed .lnb_fix {
+            top: 60px;
+        }
+        .lnb_wrap {
+            padding: 17px 0 5px 0;
+            ul {
+                li {
+                    a {
+                        padding: 0 15px;
+                        font-size: 15px;
+                    }
+                }
+            }
         }
     }
 }
